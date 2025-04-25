@@ -4,6 +4,13 @@ function factorial(n) {
 }
 
 function e(n) {
-    if(n === 0) return 1;
-    else return 1.0 / factorial(n) + e(n - 1);
+    var factorial = 1; //since e(0) = 1 its easier to just set it this way
+    var sum = 1; 
+
+    for (var i = 1; i <= n; i++) {
+        factorial = factorial * i;
+        sum = sum + 1 / factorial;
+    }
+
+    return sum;
 }
